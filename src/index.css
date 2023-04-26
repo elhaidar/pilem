@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  display: flex;
+  justify-content: center;
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #0e0e0e;
+  height: 100vh;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "Work Sans";
+  color: #f3f3f3;
+  height: 100vh;
+}
+
+.hover-underline-animation {
+  position: relative;
+  padding-bottom: 5px;
+}
+
+.hover-underline-animation::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: rgb(14 165 233);
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
