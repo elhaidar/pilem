@@ -9,7 +9,10 @@ const BannerCard = forwardRef((props, ref) => {
   const { children } = props;
 
   return (
-    <div className={"flex justify-around items-end mt-10 mb-4"} ref={ref}>
+    <div
+      className={"flex justify-around items-end mt-auto mb-4 lg:mb-8"}
+      ref={ref}
+    >
       {children}
     </div>
   );

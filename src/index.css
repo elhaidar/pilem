@@ -3,24 +3,31 @@
 @tailwind utilities;
 
 :root {
+  @apply bg-gray-950;
   display: flex;
   justify-content: center;
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #0e0e0e;
   height: 100vh;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+  max-width: 1366px;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 body {
   margin: 0;
+  padding: 0;
   font-family: "Work Sans";
   color: #f3f3f3;
-  height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 .hover-underline-animation {

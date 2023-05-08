@@ -4,7 +4,7 @@ import { faReact } from "@fortawesome/free-brands-svg-icons";
 
 const Footer = () => {
   return (
-    <footer className="font-sans mt-auto text-sm flex justify-center items-center py-3 bg-[#050b11] backdrop-blur-md">
+    <footer className="w-full font-sans mt-auto text-sm flex justify-center items-center py-3 bg-[#050b11] backdrop-blur-md">
       <p className="flex items-center">
         Build with{" "}
         <FontAwesomeIcon icon={faHeart} className="text-red-500 w-4 mx-2" />{" "}
