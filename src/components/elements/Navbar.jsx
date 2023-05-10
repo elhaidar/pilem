@@ -9,7 +9,7 @@ const Navbar = () => {
     setActive(location.pathname);
   }, [location]);
   return (
-    <nav className="w-full bg-transparent backdrop-blur-sm py-4 text-sm border-b-2 border-black border-opacity-10 flex justify-between items-center">
+    <nav className="px-4 lg:px-16 min-w-full bg-transparent backdrop-blur-sm py-4 text-sm border-b-2 border-black border-opacity-10 flex justify-between items-center">
       <h3 className="hidden font-heading font-black text-sm text-sky-300 lg:block">
         <span className="text-xl">P</span>ilem.
       </h3>

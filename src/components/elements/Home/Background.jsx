@@ -5,8 +5,9 @@ const Background = (props) => {
   const style = {
     backgroundImage: `url(${image})`,
     backgroundRepeat: "repeat",
-    width: "100vw",
-    height: "100vh",
+    width: "100%",
+    maxWidth: "1366px",
+    height: "100%",
     position: "fixed",
     top: "0",
     // boxShadow: "627px -150px 200px 200px rgba(0,0,0,1) inset",

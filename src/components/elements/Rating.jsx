@@ -4,11 +4,18 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { faStar } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useContext } from "react";
+import { Context } from "../context/Context";
 
 const STAR_COUNT = 5;
 
 // eslint-disable-next-line react/prop-types
-const Rating = ({ value }) => {
+const Rating = () => {
+  const { movies, movieIndex } = useContext(Context);
+  let value = 0;
+  movies.length > 0 &&
+    movies[movieIndex] &&
+    (value = movies[movieIndex].vote_average / 2);
   const stars = Array.from({ length: STAR_COUNT }, (_, i) => (
     <FontAwesomeIcon
       icon={faStar}

@@ -1,23 +1,24 @@
-import Background from "../Background";
-import Footer from "../Footer";
-import Navbar from "../Navbar";
+import { useContext } from "react";
+import Background from "../elements/Home/Background";
+import Footer from "../elements/Footer";
+import Navbar from "../elements/Navbar";
+import { Context } from "../context/Context";
 
 // eslint-disable-next-line react/prop-types
-const AuthLayouts = ({ children, movies, movieIndex, type }) => {
+const AuthLayouts = ({ children, type }) => {
+  const { movies, movieIndex } = useContext(Context);
   return (
-    <div className="flex flex-col justify-center items-center max-w-[1366px] ">
-      {type === "home" && (
+    <div className="flex flex-col max-w-[1366px] min-h-screen max-h-full">
+      {type === "home" && movies.length > 0 && (
         <Background
           // eslint-disable-next-line react/prop-types
           image={`https://image.tmdb.org/t/p/original${movies[movieIndex].poster_path}`}
         />
       )}
 
-      <div className="w-screen">
-        <div className="flex flex-col h-screen px-4 lg:px-16">
-          <Navbar />
-          {children}
-        </div>
+      <div className="flex flex-col items-center min-h-screen h-full w-full">
+        <Navbar />
+        {children}
       </div>
       <Footer />
     </div>
