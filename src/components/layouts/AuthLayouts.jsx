@@ -12,7 +12,7 @@ const AuthLayouts = ({ children, type }) => {
       {type === "home" && movies.length > 0 && (
         <Background
           // eslint-disable-next-line react/prop-types
-          image={`https://image.tmdb.org/t/p/original${movies[movieIndex].poster_path}`}
+          image={`https://image.tmdb.org/t/p/original${movies[movieIndex].backdrop_path}`}
         />
       )}
 

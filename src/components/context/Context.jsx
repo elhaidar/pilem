@@ -12,6 +12,10 @@ const Provider = ({ children }) => {
   const [fetchError, setFetchError] = useState(null);
   const [active, setActive] = useState("");
   const [movieIndex, setMovieIndex] = useState(0);
+  const [movieId, setMovieId] = useState("");
+  const [movie, setMovie] = useState({});
+  const [modal, setModal] = useState(false);
+  const [search, setSearch] = useState("");
   const windowDimension = useWindowDimensions();
 
   const fetchAPI = async (url) => {
@@ -62,6 +66,14 @@ const Provider = ({ children }) => {
         windowDimension,
         movieIndex,
         setMovieIndex,
+        movieId,
+        setMovieId,
+        movie,
+        setMovie,
+        modal,
+        setModal,
+        search,
+        setSearch
       }}
     >
       {children}

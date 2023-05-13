@@ -31,6 +31,12 @@ body {
   overflow-x: hidden;
 }
 
+h1,
+h2,
+h3 {
+  @apply font-heading;
+}
+
 .hover-underline-animation {
   position: relative;
   padding-bottom: 5px;
@@ -52,4 +58,14 @@ body {
 .hover-underline-animation:hover::after {
   transform: scaleX(1);
   transform-origin: bottom left;
+}
+
+.shadow-banner::after {
+  box-shadow: -3px 83px 100px -42px rgba(0, 0, 0, 1) inset;
+  content: "";
+  display: block;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  width: 100vw;
 }

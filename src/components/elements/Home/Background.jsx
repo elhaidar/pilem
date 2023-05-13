@@ -4,7 +4,7 @@ const Background = (props) => {
   const { image } = props;
   const style = {
     backgroundImage: `url(${image})`,
-    backgroundRepeat: "repeat",
+    backgroundRepeat: "no-repeat",
     width: "100%",
     maxWidth: "1366px",
     height: "100%",
@@ -15,7 +15,7 @@ const Background = (props) => {
   return (
     <div
       style={style}
-      className="-z-50 bg-cover bg-left-center shadow-mobile lg:bg-[90%] lg:bg-contain lg:shadow-desktop"
+      className="-z-50 bg-cover bg-center shadow-mobile lg:bg-[90%] lg:bg-contain lg:shadow-desktop lg:bg-left-center"
     ></div>
   );
 };
