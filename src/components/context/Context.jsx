@@ -73,7 +73,7 @@ const Provider = ({ children }) => {
         modal,
         setModal,
         search,
-        setSearch
+        setSearch,
       }}
     >
       {children}
