@@ -7,7 +7,7 @@ import { Context } from "../components/context/Context";
 import api from "../api";
 import Loading from "./Loading";
 import ErrorPage from "./404";
-import MovieDetails from "../components/elements/Explore/movieDetails";
+import MovieDetails from "../components/elements/Explore/MovieDetails";
 
 const ExplorePage = () => {
   const {
