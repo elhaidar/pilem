@@ -54,7 +54,7 @@ const ExplorePage = () => {
       };
 
       search && fetchMovie(search);
-    }, 3000);
+    }, 1500);
 
     return () => clearTimeout(delayDebounceFn);
   }, [search, setFetchError]);
