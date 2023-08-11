@@ -30,25 +30,33 @@ const ExplorePage = () => {
   }, [movies]);
 
   useEffect(() => {
-    const fetchMovie = async (data) => {
-      setLoading(true);
-      try {
-        const response = await api.get(
-          `/search/movie?api_key=${import.meta.env.VITE_API_KEY}&query=${data}`
-        );
-        setSearchedMovies(response.data.results);
-      } catch (err) {
-        if (err.response) {
-          setFetchError(err.response.data.status_message);
-          //NOT in 200 status range
-        } else {
-          setFetchError(err.message);
+    const delayDebounceFn = setTimeout(() => {
+      // Send Axios request here
+      const fetchMovie = async (data) => {
+        setLoading(true);
+        try {
+          const response = await api.get(
+            `/search/movie?api_key=${
+              import.meta.env.VITE_API_KEY
+            }&query=${data}`
+          );
+          setSearchedMovies(response.data.results);
+        } catch (err) {
+          if (err.response) {
+            setFetchError(err.response.data.status_message);
+            //NOT in 200 status range
+          } else {
+            setFetchError(err.message);
+          }
+        } finally {
+          setLoading(false);
         }
-      } finally {
-        setLoading(false);
-      }
-    };
-    search && fetchMovie(search);
+      };
+
+      search && fetchMovie(search);
+    }, 3000);
+
+    return () => clearTimeout(delayDebounceFn);
   }, [search, setFetchError]);
 
   const handleSubmit = (e) => {
@@ -107,7 +115,7 @@ const ExplorePage = () => {
                       return (
                         movie.poster_path && (
                           <div
-                            className="basis-1/3 md:basis-1/4 lg:basis-1/6 min-h-full p-1 flex justify-center items-center cursor-pointer hover:brightness-75"
+                            className="basis-1/3 md:basis-1/4 lg:basis-1/5 min-h-full p-1 flex justify-center items-center cursor-pointer hover:brightness-75"
                             key={movie.id}
                             onClick={() => {
                               setMovieId(movie.id);

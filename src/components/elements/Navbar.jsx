@@ -13,8 +13,8 @@ const Navbar = () => {
       <h3 className="hidden font-heading font-black text-sm text-sky-300 lg:block">
         <span className="text-xl">P</span>ilem.
       </h3>
-      <ul className="w-full flex items-center justify-center">
-        <li className="mr-8">
+      <div className="w-full flex items-center justify-center">
+        <button className="mr-8">
           <Link
             to="/"
             className={
@@ -23,28 +23,11 @@ const Navbar = () => {
           >
             Home
           </Link>
-        </li>
-        <li className="mr-8">
-          <Link
-            className={
-              "hover-underline-animation " +
-              (active === "trending" && "font-bold")
-            }
-          >
-            Trending
-          </Link>
-        </li>
-        <li className="mr-8">
-          <Link
-            className={
-              "hover-underline-animation " +
-              (active === "upcoming" && "font-bold")
-            }
-          >
-            Upcoming
-          </Link>
-        </li>
-        <li>
+        </button>
+        <button className="mr-8 text-white text-opacity-50" disabled>
+          Upcoming
+        </button>
+        <button>
           <Link
             to="/explore"
             className={
@@ -54,8 +37,8 @@ const Navbar = () => {
           >
             Explore
           </Link>
-        </li>
-      </ul>
+        </button>
+      </div>
     </nav>
   );
 };
